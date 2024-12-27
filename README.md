@@ -100,4 +100,8 @@ Run the GUI and load the `example_audio.mat` file to visualize and modify the au
 - Advanced pitch modification algorithms for higher-quality results.
 - Integration of additional audio analysis features.
 
+  ## Contributors
+
+- [Laila Mohamed](https://github.com/laila2005) - Creator & Maintainer
+
 Enjoy exploring audio with this versatile GUI! 🎵
