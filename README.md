@@ -20,6 +20,7 @@ Ensure the file structure includes audio_data and fs variables.
 - Restore the audio to its original pitch using the Reset button.
 Audio Playback:
 
+![interface](https://github.com/laila2005/PythonProject/blob/master/image.png)
 Play the loaded or modified audio directly from the GUI.
 Requirements
 Software
