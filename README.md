@@ -40,7 +40,7 @@ This project is a MATLAB-based graphical user interface (GUI) designed for visua
 ### How to Use
 
 1. **Launch the GUI**
-   - Run the `audioVisualizationGUI.m` script in MATLAB.
+   - Run the `RunAllFiles.m` script in MATLAB.
 
 2. **Load Audio**
    - Click the **Load Audio** button to select a `.mat` file. The GUI will automatically update with:
