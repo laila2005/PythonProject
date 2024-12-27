@@ -1,7 +1,7 @@
 ## Audio Visualization and Pitch Modification GUI
 
 This project is a MATLAB-based graphical user interface (GUI) designed for visualizing audio signals in both time and frequency domains and modifying their pitch. It provides an intuitive and interactive platform for analyzing and transforming audio data.
-<img src="https://example.com/image.png](https://github.com/laila2005/PythonProject/blob/master/image.png" width="300" height="200">
+<img src="https://github.com/laila2005/PythonProject/blob/master/image.png" width="300" height="200">
 
 ### Features
 
