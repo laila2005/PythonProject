@@ -1,91 +1,105 @@
+## Audio Visualization and Pitch Modification GUI
 
-# Audio Visualization and Pitch Modification GUI
-This project is a MATLAB-based graphical user interface (GUI) designed to visualize audio signals in both time and frequency domains and manipulate their pitch. It offers an interactive and user-friendly experience for analyzing and modifying audio data.
+This project is a MATLAB-based graphical user interface (GUI) designed for visualizing audio signals in both time and frequency domains and modifying their pitch. It provides an intuitive and interactive platform for analyzing and transforming audio data.
 
-## Features
-### Audio Loading:
+### Features
 
-Load ``.mat`` files containing audio data ``(audio_data)`` and sampling frequency`` (fs).``
-Ensure the file structure includes audio_data and fs variables.
-## Visualization:
+#### Audio Loading
+- Load `.mat` files containing:
+  - **audio_data**: The audio signal (a vector of samples).
+  - **fs**: The sampling frequency (a scalar).
+- Ensure the `.mat` file structure includes both `audio_data` and `fs` variables.
 
-- View the time-domain representation of the audio signal.
-- Analyze the frequency spectrum using the frequency-domain plot.
-## Pitch Modification:
+#### Visualization
+- **Time-Domain Plot**: Visualize the audio signal waveform over time.
+- **Frequency-Domain Plot**: Analyze the audio signal's frequency spectrum.
 
-### Change the pitch of the audio to simulate different voices:
-- Male Voice (lower pitch)
-- Female Voice (slightly higher pitch)
-- Child Voice (significantly higher pitch)
-- Restore the audio to its original pitch using the Reset button.
-Audio Playback:
+#### Pitch Modification
+- Change the audio pitch to simulate different voices:
+  - **Male Voice**: Lowers the pitch (factor: 0.8).
+  - **Female Voice**: Slightly raises the pitch (factor: 1.2).
+  - **Child Voice**: Significantly raises the pitch (factor: 1.5).
+- Restore the original pitch with the **Reset** button.
 
-![interface](https://github.com/laila2005/PythonProject/blob/master/image.png)
-Play the loaded or modified audio directly from the GUI.
-Requirements
-Software
-MATLAB: R2020b or later (earlier versions may work but are not tested).
-MATLAB Signal Processing Toolbox (required for resampling functionality).
-File Format
-Input files must be in .mat format containing:
-audio_data: The audio signal (vector of samples).
-fs: The sampling frequency (scalar).
-How to Use
-Launch the GUI:
+#### Audio Playback
+- Play the loaded or modified audio directly from the GUI.
 
-Run the audioVisualizationGUI.m script in MATLAB.
-Load Audio:
+### Requirements
 
-Click the Load Audio button to select a .mat file containing the audio data.
-The time and frequency domain plots will automatically update based on the loaded audio.
-Modify Pitch:
+#### Software
+- **MATLAB**: R2020b or later (earlier versions may work but are not tested).
+- **MATLAB Signal Processing Toolbox**: Required for resampling functionality.
 
-Click one of the voice buttons to modify the pitch:
-Male Voice lowers the pitch (factor: 0.8).
-Female Voice slightly raises the pitch (factor: 1.2).
-Child Voice significantly raises the pitch (factor: 1.5).
-Reset Audio:
+#### File Format
+- Input files must be in `.mat` format, containing:
+  - **audio_data**: The audio signal (vector of samples).
+  - **fs**: The sampling frequency (scalar).
 
-Click the Reset button to restore the original audio.
-Play Audio:
+### How to Use
 
-Click the Play button to hear the current audio signal (original or modified).
-File Structure
-css
-Copy code
-audioVisualizationGUI.m   % Main MATLAB GUI script
-example_audio.mat         % Example .mat file containing audio data (optional)
-README.md                 % Documentation for the project
-Error Handling
-Invalid File Structure: Displays an error if the .mat file does not include audio_data and fs.
-Pitch Factor Limitations: Prevents pitch factors that could result in an invalid or unplayable sample rate.
-Resampling Errors: Alerts the user if resampling fails due to extreme pitch changes.
-Troubleshooting
-Audio Does Not Play:
+1. **Launch the GUI**
+   - Run the `audioVisualizationGUI.m` script in MATLAB.
 
-Ensure you have loaded a valid .mat file.
-Verify that audio_data and fs are correctly structured.
-GUI Not Launching:
+2. **Load Audio**
+   - Click the **Load Audio** button to select a `.mat` file. The GUI will automatically update with:
+     - Time-Domain Plot
+     - Frequency-Domain Plot
 
-Ensure all required files are in the MATLAB working directory.
-Verify that MATLAB Signal Processing Toolbox is installed.
-Errors with Pitch Modification:
+3. **Modify Pitch**
+   - Use the voice modification buttons to alter the pitch:
+     - **Male Voice**: Lowers the pitch.
+     - **Female Voice**: Slightly raises the pitch.
+     - **Child Voice**: Significantly raises the pitch.
 
-Large pitch changes may cause resampling errors. Try using a smaller pitch factor.
-Example Usage
-To test the application, load an example .mat file:
+4. **Reset Audio**
+   - Click the **Reset** button to restore the audio to its original pitch.
 
-matlab
-Copy code
+5. **Play Audio**
+   - Click the **Play** button to hear the current audio (original or modified).
+
+### File Structure
+
+| File                      | Description                              |
+|---------------------------|------------------------------------------|
+| `audioVisualizationGUI.m` | Main MATLAB GUI script.                  |
+| `example_audio.mat`       | Example `.mat` file containing audio data. |
+| `README.md`               | Documentation for the project.           |
+
+### Error Handling
+
+- **Invalid File Structure**: Displays an error if the `.mat` file does not contain `audio_data` and `fs`.
+- **Pitch Factor Limits**: Prevents extreme pitch changes that could result in invalid sample rates.
+- **Resampling Errors**: Alerts users if resampling fails due to significant pitch changes.
+
+### Troubleshooting
+
+| Problem                   | Solution                                                                          |
+|---------------------------|----------------------------------------------------------------------------------|
+| Audio Does Not Play       | Ensure a valid `.mat` file is loaded. Verify `audio_data` and `fs` are properly structured. |
+| GUI Not Launching         | Ensure all required files are in the MATLAB working directory. Confirm MATLAB Signal Processing Toolbox is installed. |
+| Errors in Pitch Modification | Reduce the pitch modification factor to avoid extreme resampling errors.          |
+
+### Example Usage
+
+To test the application, create and save a sample `.mat` file:
+
+```matlab
 audio_data = sin(2 * pi * 440 * (0:1/44100:1)); % Example sine wave
 fs = 44100; % Sampling frequency
 save('example_audio.mat', 'audio_data', 'fs'); % Save as .mat file
-Run the GUI and load the example_audio.mat file to visualize and modify the audio.
+```
 
-Future Improvements
-Support for additional audio formats (e.g., .wav or .mp3).
-Real-time visualization during audio playback.
-Advanced pitch modification algorithms for higher-quality results.
-Integration with more audio analysis features.
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Run the GUI and load the `example_audio.mat` file to visualize and modify the audio.
+
+### Future Improvements
+
+- Support for additional audio formats (e.g., `.wav`, `.mp3`).
+- Real-time visualization during audio playback.
+- Advanced pitch modification algorithms for higher-quality results.
+- Integration of additional audio analysis features.
+
+### License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+Enjoy exploring audio with this versatile GUI! 🎵
