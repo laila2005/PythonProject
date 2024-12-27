@@ -100,8 +100,4 @@ Run the GUI and load the `example_audio.mat` file to visualize and modify the au
 - Advanced pitch modification algorithms for higher-quality results.
 - Integration of additional audio analysis features.
 
-### License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
 Enjoy exploring audio with this versatile GUI! 🎵
